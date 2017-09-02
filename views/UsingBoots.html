@@ -1,0 +1,99 @@
+<html>
+ <head>
+   <title> CDAC-FORUM </title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ </head>
+<body>
+<div>
+		<nav class="navbar navbar-inverse">
+			  <div class="container-fluid">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> 
+				  </button>
+				  <a class="navbar-brand" href="#">CDAC-FORUM</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+				  <ul class="nav navbar-nav">
+					<li class="active"><a href="#">HOME</a></li>
+					<li><a href="#">CDAC</a></li>
+					<li><a href="#">ABOUT US</a></li> 
+					<li><a href="#">CONTACT</a></li> 
+				  </ul>
+				  <ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				  </ul>
+				</div>
+			  </div>
+			</nav>
+	</div>
+<form class="form-inline">
+  <input id="search" type="text" name="search" placeholder="Search Query">
+</form>
+</div>
+</div>
+<div>
+  		<section>
+  			<div class="page-header" id="header">
+  				<h2 id="side">Questions</h2>
+  			</div>
+
+  			<div class="row">
+  				<div class="col-xs-10 col-sm-12 col-md-2 col-lg-2">
+  				<blockquote>
+  					<button class="button btn-info btn-center" style="float: left;">Ask Question</button>
+  				</blockquote>
+
+  					
+  				</div>
+  				<div class="col-xs-10 col-sm-12 col-md-7 col-lg-7">
+  				<div>
+  					<ol>
+            <% questions.forEach(function(question){ %>
+  						<li>
+  						<fieldset>
+  						<div class="row form-inline">
+  						<div class="form-group" id="rite" style="float: left;">
+  								<input type="checkbox" class="success-checkbox" id="le">Query-1
+  							</div>
+  							<ul class="nav navbar-nav navbar-right" style="float: right;">
+           <li>22 july 2017&emsp;</li>
+           <li><%= question.course %></li>&emsp;&emsp;&emsp;       
+                </ul>
+  							</div>
+  							<h2><%= question.title %></h2><br>
+  						    <p>
+                       <a href="/questions/<%= question._id %>" class="btn btn-primary">More Info</a>
+                   </p>	
+  						</fieldset>
+  						</li>
+  						<% }); %>
+  					</ol>
+  				</div>
+  				</div>
+  				<div class="col-xs-10 col-sm-12 col-md-3 col-lg-3">
+  					<blockquote>
+  					<h2>Top Viewed Posts</h2>
+  					<ol>
+  						<li><a href="#"><h3>fgrtglel erlt, er'lg,erlt, er erert erl.,g ert </h3></a></li>
+  						<li><a href="#"><h3>fgrtglel erlt, er'lg,erlt, er erert erl.,g ert </h3></a></li>
+  						<li><a href="#"><h3>fgrtglel erlt, er'lg,erlt, er erert erl.,g ert </h3></a></li>
+  						<li><a href="#"><h3>fgrtglel erlt, er'lg,erlt, er erert erl.,g ert </h3></a></li>
+  						<li><a href="#"><h3>fgrtglel erlt, er'lg,erlt, er erert erl.,g ert </h3></a></li>
+  						<li><a href="#"><h3>fgrtglel erlt, er'lg,erlt, er erert erl.,g ert </h3></a></li>
+  						<li><a href="#"><h3>fgrtglel erlt, er'lg,erlt, er erert erl.,g ert </h3></a></li>
+  						<li><a href="#"><h3>fgrtglel erlt, er'lg,erlt, er erert erl.,g ert </h3></a></li>
+  					</ol>
+  						
+  					</blockquote>
+  				</div>
+  			</div><!-- End row -->
+  		</section>
+  	</div><!--End Container-->
+ </body>
+</html>

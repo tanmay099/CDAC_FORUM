@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+ 
+  <!-- /*<script src="angular.min.js"></script>*/ -->
+    <title> My course </title>
+      
+  </head>
+  <body ng-app="myapp" ng-controller="cltr">
+  <div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> 
+          </button>
+          <a class="navbar-brand" href="#">CDAC-FORUM</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+         
+          <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span>Logout</a></li>
+          </ul>
+        </div>
+        </div>
+      </nav>
+  </div>
+  <div class="container">
+  <div class="col-sm-8 col-sm-offset-2">
+  <div class="page-header text-left"> <h2>Ask Query</h2></div>
+
+    <form data-toggle="validator" role="form" method="POST" action="/quests">
+    <div class="form-group">
+  <label for="course" class="control-label" >Course </label>
+ <!-- <select class = "form-control" id="course" name="course" ng-model="cdac" ng-options="module for (module,title) in cdac"
+                ng-change="GetSelectedCourse()"> -->
+ <select class="form-control" ng-model="selectedName" ng-options="x for x in names" name="course">
+</select>
+           
+
+
+<!-- <option value=''>Select Course</option> -->
+  
+</div>
+ <div class="form-group">
+ <label for="module" class="control-label" >Module *</label>
+ <select class="form-control" ng-model="SelectedCourse" ng-options="x for x in Course" name="module">
+</select>
+  
+ </div>
+  <div class="form-group">
+        <label for="title" class="control-label">title</label>
+        <input type = "text" class = "form-control" name="title" id = "Title" placeholder = "Enter Title">
+      </div>
+     
+    
+     
+    <div class="form-group">
+     <label for = "name" class="control-label">Query</label>
+
+
+      <textarea class = "form-control" name="query" rows = "10" cols="100" size="100">
+        
+
+
+      </textarea>
+
+   </div>
+  
+     <div class = "form-group">
+      <!-- <div class = "col-sm-offset-6 col-sm-6"> -->
+          <button id="btn" type = "submit"  value="submit" name="Submit" class = "btn btn-primary"  style="float: right;">Submit Query</button>
+      </div>
+  <!--  </div> -->
+  
+  </form>
+
+ </div>
+ </div>
+ <script type="text/javascript">
+var app = angular.module("myapp",[]);
+    app.controller('cltr',function ($scope){
+ $scope.names = ["DAC",
+
+                "DMC", "DBDA", "DSSD","DSSD", 'DIOT'];
+$scope.Course = [
+
+                
+                    'OS',
+                    'C++',
+                    'Data_structure',
+                    'DBMS',
+                    'JAVA Technology',
+                    'Web Programming',
+                    'Application Security&Testing',
+                    'Parallel Computing',
+                     'Android',
+                    'IOS',
+                    'Hybrid Programming',
+                 'Statistical Analysis with R',
+ 'Programming with Python',
+'Fundamentals of Linux Programming',
+'Java with Scala',
+'Cloud Computing & HPC Applications',
+'Data Collection & DBMS (Principles, Tools & Platforms)',
+'Big Data Technologies',
+'Data Visualization - Analysis and Reporting',
+'Advanced Analytics',
+'Practical Machine Learning'
+ ,
+ 
+ 'Advanced C/C++ Programming',
+  'Computer Networks & Security',
+  'Software Engineering',
+  'Linux System Programming and Driver Development',
+  'Windows System Programming',
+  'Cloud Computing',
+  'Mobile Computing and Android Programming',
+
+  'Programming Concepts',
+'Microcontrollers and Interfacing',
+'Embedded Operating Systems',
+'Real-Time Operating Systems',
+'Internet of Things (IoT) and Mobile Programming',
+'Embedded Hardware Design and Development'
+,
+'Fundamentals of IoT',
+'Programming Technologies',
+'Microcontroller Programming',
+'Embedded Linux Platform',
+'Network Programming & Wireless Technologies',
+'Data Management & Analytics',
+'Edge Computing and Protocols',
+'Cloud Computing',
+'Mobile and Web Applications',
+'Technology Aggregation & Case Studies'
+
+            ]
+
+ $scope.GetSelectedCourse = function () {
+                $scope.strCourse = document.getElementById("names").value;
+            };
+            $scope.GetSelectedModule = function () {
+                $scope.strModule = document.getElementById("Course").value;
+            };
+             /*$scope.GetSelectedCity = function () {
+                $scope.strCity = document.getElementById("city").value;
+            };*/
+        });
+
+            </script>
+
+  </body>
+  
+  </html>
+
+
+
+
+
+<% include ./partials/footer %>

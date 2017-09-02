@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <style type="text/css">
+  fieldset 
+.navbar-nav>li>a.profile-image {
+ 
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+}
+
+img {
+    max-width: 100%;
+    height: 30px;
+    float: left;
+     margin: 3px;
+   
+}
+.logout{
+
+padding-left: 40px;
+
+}
+.input{
+float: right;
+ position: static;
+right:    0;
+bottom:   0;
+}
+
+    .grid-divider {
+        position: relative;
+        padding: 0;
+    }
+    .grid-divider>[class*='col-'] {
+        position: static;
+    }
+    .grid-divider>[class*='col-']:nth-child(n+2):before {
+        content: "";
+        border-left: 1px solid #DDD;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+    .col-padding {
+        padding: 0 15px;
+    }
+
+    h1{color: green;}
+    h2{color: black;}
+    h3{color: red;}
+h4{color: yellow;}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+
+function my_function(){
+	console.log("function called");
+    var originalDivHtml = document.getElementById('one').innerHTML;
+document.getElementById('two').innerHTML = originalDivHtml;
+}
+function my_function2(){
+	console.log("function called");
+    var originalDivHtml = document.getElementById('two').innerHTML;
+document.getElementById('three').innerHTML = originalDivHtml;
+}
+
+function my_function3(){
+	console.log("function called");
+    var originalDivHtml = document.getElementById('three').innerHTML;
+document.getElementById('four').innerHTML = originalDivHtml;
+}
+
+function my_function4(){
+	console.log("function called");
+    var originalDivHtml = document.getElementById('four').innerHTML;
+document.getElementById('one').innerHTML = originalDivHtml;
+}
+
+</script>
+<div>
+		<nav class="navbar navbar-inverse">
+			  <div class="container-fluid">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> 
+				  </button>
+				  <a class="navbar-brand" href="/questions">Calela</a>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+				  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li>
+          <a href="#"><span>
+          <img src="http://cdn2.business2community.com/wp-content/uploads/2014/04/profile-picture-300x300.jpg" class="profile-image img-circle">
+          </span>Username</a>
+          
+          </li>
+         <li class="logout"><a href="#">Logout</a></li>
+		<li class="logout"><a href="#">Settings</a></li>
+        </ul>
+      </li>
+					
+				  </ul>
+				</div>
+			 
+			</nav>
+	</div>
+<div class="container">
+   <div class="row grid-divider">
+    <div class="col-lg-3">
+      <div class="col-padding">
+        <h1 id="one">HI,iam from ist</h1>
+        <p>press plus to move text.</p>
+        <input class="btn btn-success input" type="submit" value="+" onclick = "my_function()" name="+" placeholder="+">
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="col-padding">
+        <h2 id="two">HI,iam from 2nd</h2>
+        <p>press plus to move text</p>
+        <input class="btn btn-default input" type="submit" value="+" onclick = "my_function2()" name="">
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="col-padding">
+        <h3 id="three">HI,iam from 3rd</h3>
+        <p>press plus to move text </p>
+        <input class="btn btn-danger input" type="submit" value="+" onclick = "my_function3()" name="">
+      </div>
+      </div>
+      <div class="col-lg-3">
+      <div class="col-padding">
+        <h4 id="four">HI,iam from 4th</h4>
+        <p>press plus to move text</p>
+        <input class="btn btn-warning input" type="submit"value="+" onclick = "my_function4()" name="">
+      </div>
+
+    </div>
+    </div>
+	</div>
+</body>
+
+
+</html>
